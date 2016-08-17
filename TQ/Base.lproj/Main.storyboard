@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="euj-3C-txD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="euj-3C-txD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,12 +8,13 @@
         <!--View Controller-->
         <scene sceneID="7U7-Uh-GJd">
             <objects>
-                <viewController id="euj-3C-txD" sceneMemberID="viewController">
+                <viewController id="euj-3C-txD" customClass="ViewController" customModule="TQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DKF-Qm-L9r" userLabel="Регистрация"/>
                         <viewControllerLayoutGuide type="bottom" id="okq-P0-ADE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jdQ-Iz-DxC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnM-Wr-gIL">
@@ -22,6 +23,9 @@
                                 <variation key="widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="354" y="293" width="92" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="RegistrationButton:" destination="euj-3C-txD" eventType="touchUpInside" id="0MH-fG-6tE"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ещё раз пароль" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-iJ-Qwj">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
@@ -66,6 +70,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="cpasswordField" destination="AM9-iJ-Qwj" id="f1q-a2-SzK"/>
+                        <outlet property="loginField" destination="WsO-tf-UD5" id="3dP-JV-er2"/>
+                        <outlet property="passwordField" destination="HtU-yD-0m2" id="2sG-aD-qxA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yev-fD-q2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
