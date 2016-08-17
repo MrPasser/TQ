@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sviatoslav Krasin. All rights reserved.
 //
 
-
+import Firebase
 
 class Joke {
     private var _jokeRef: Firebase!
