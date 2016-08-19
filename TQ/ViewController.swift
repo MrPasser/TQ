@@ -14,9 +14,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var cpasswordField: UITextField!
     
-    @IBAction func Enter(sender: UIButton) {
+    
+    
+    
+    @IBAction func RegistrationButton(sender: UIButton) {
+        
+        
         
         let allertController = UIAlertController(title: "Вход", message: "Введите данные для входа", preferredStyle: .Alert)
         
@@ -25,11 +29,14 @@ class ViewController: UIViewController {
         allertController.addAction(allertOkAction)
         
         allertController.addTextFieldWithConfigurationHandler { ( loginTF) in
-            loginTF.placeholder = "Ваш логин"        }
+            loginTF.placeholder = "Ваш логин"}
         
         allertController.addTextFieldWithConfigurationHandler { ( passwordTF) in
             passwordTF.placeholder = "Ваш пароль"
             passwordTF.secureTextEntry = true        }
+        
+        
+        
         
         if loginField.text != nil && passwordField.text != nil {
             
@@ -37,12 +44,14 @@ class ViewController: UIViewController {
             let login = loginField.text
             let password = passwordField.text
             
+            print(login, password)
+            
             let parameters = [
                 "login" : login!,
                 "password": password!
             ]
             
-            Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/login", parameters: parameters, encoding: .JSON).responseJSON {
+            Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/registration", parameters: parameters, encoding: .JSON).responseJSON {
                 response in
                 
                 //print(response.request)  // original URL request
@@ -71,8 +80,8 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func RegistrationButton(sender: UIButton) {
-        if cpasswordField.text == passwordField.text && loginField.text != nil && passwordField.text != nil {
+    @IBAction func EnterBottom(sender: UIButton) {
+        if loginField.text != nil && passwordField.text != nil {
             
             
             let login = loginField.text
@@ -85,7 +94,7 @@ class ViewController: UIViewController {
             //193.33.237.133:9090
             //http://sn-munchkin-server.cfapps.io/mobile/user/registration
             
-            Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/registration", parameters: parameters, encoding: .JSON).responseJSON {
+            Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/login", parameters: parameters, encoding: .JSON).responseJSON {
                 response in
                 
                 //print(response.request)  // original URL request
