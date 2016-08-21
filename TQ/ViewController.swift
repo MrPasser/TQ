@@ -22,33 +22,27 @@ class ViewController: UIViewController {
         
         
         
-        let allertController = UIAlertController(title: "Вход", message: "Введите данные для входа", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Вход", message: "Введите данные для регистрации", preferredStyle: .Alert)
         
-        let  allertOkAction = UIAlertAction(title: "Enter", style: .Default, handler: nil)
+        let  alertOkAction = UIAlertAction(title: "Enter", style: .Default, handler: nil)
         
-        allertController.addAction(allertOkAction)
         
-        allertController.addTextFieldWithConfigurationHandler { ( loginTF) in
+        alertController.addTextFieldWithConfigurationHandler { ( loginTF) -> Void in
+            loginTF.text = ""
             loginTF.placeholder = "Ваш логин"}
         
-        allertController.addTextFieldWithConfigurationHandler { ( passwordTF) in
+        alertController.addTextFieldWithConfigurationHandler { ( passwordTF) -> Void in
+            passwordTF.text = ""
             passwordTF.placeholder = "Ваш пароль"
             passwordTF.secureTextEntry = true        }
         
-        
-        
-        
-        if loginField.text != nil && passwordField.text != nil {
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let loginTF = alertController.textFields![0] as UITextField
             
-            
-            let login = loginField.text
-            let password = passwordField.text
-            
-            print(login, password)
-            
+            let passwordTF = alertController.textFields![0] as UITextField //как заставить получить инфу из второго TF
             let parameters = [
-                "login" : login!,
-                "password": password!
+                "login" : loginTF,
+                "password": passwordTF
             ]
             
             Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/registration", parameters: parameters, encoding: .JSON).responseJSON {
@@ -67,12 +61,25 @@ class ViewController: UIViewController {
                 
                 
             }
+        }))
+
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+
             
             
             
-            presentViewController(allertController, animated: true, completion: nil)
+            presentViewController(alertController, animated: true, completion: nil)
             
-        }
+        
     }
 
     
@@ -91,8 +98,7 @@ class ViewController: UIViewController {
                 "login" : login!,
                 "password": password!
             ]
-            //193.33.237.133:9090
-            //http://sn-munchkin-server.cfapps.io/mobile/user/registration
+            
             
             Alamofire.request(.POST, "http://sn-munchkin-server.cfapps.io/mobile/user/login", parameters: parameters, encoding: .JSON).responseJSON {
                 response in

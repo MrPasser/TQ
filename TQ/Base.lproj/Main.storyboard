@@ -49,30 +49,29 @@
                     <connections>
                         <outlet property="loginField" destination="WsO-tf-UD5" id="IVa-tu-HeL"/>
                         <outlet property="passwordField" destination="HtU-yD-0m2" id="0tu-Kz-fsq"/>
-                        <segue destination="Xxs-oi-Km5" kind="replace" splitViewControllerTargetIndex="1" id="peA-3T-GMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yev-fD-q2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="18"/>
+            <point key="canvasLocation" x="1263" y="18"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="0mz-ez-v9o">
+        <scene sceneID="OYu-Fk-AAQ">
             <objects>
-                <viewController id="Xxs-oi-Km5" sceneMemberID="viewController">
+                <viewController id="ZvO-gk-6yo" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fer-ib-Yc1"/>
-                        <viewControllerLayoutGuide type="bottom" id="7XH-p3-vaw"/>
+                        <viewControllerLayoutGuide type="top" id="RHf-Fh-hga"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdf-tN-zf1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fU2-sX-648">
+                    <view key="view" contentMode="scaleToFill" id="LBv-jd-fiI">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hax-Yg-Jgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8l-WY-UzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159" y="18"/>
+            <point key="canvasLocation" x="2447" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bj9-ZW-1gB">
